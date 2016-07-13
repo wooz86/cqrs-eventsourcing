@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+jar {
+    baseName = 'cqrs-eventsourcing'
+    version = '0.1.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
+    compile 'com.datastax.cassandra:cassandra-driver-core:3.0.0'
+    compile 'com.datastax.cassandra:cassandra-driver-mapping:3.0.0'
+
+    testCompile 'junit:junit:4.12'
+}
