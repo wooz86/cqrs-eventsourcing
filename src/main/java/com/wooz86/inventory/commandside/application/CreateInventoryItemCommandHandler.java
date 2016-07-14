@@ -23,6 +23,8 @@ public class CreateInventoryItemCommandHandler implements CommandHandler<CreateI
         // Persist generated events
         repository.save(inventoryItem, -1);
 
+        // @todo publish events to event bus, this should be refactored later to avoid 2PC
+
         inventoryItem.markEventsAsCommitted();
     }
 }

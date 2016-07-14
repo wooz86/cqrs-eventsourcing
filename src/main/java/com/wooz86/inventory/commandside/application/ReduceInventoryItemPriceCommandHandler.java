@@ -28,6 +28,8 @@ public class ReduceInventoryItemPriceCommandHandler implements CommandHandler<co
         // Persist generated events
         repository.save(inventoryItem, originatingVersion);
 
+        // @todo publish events to event bus, this should be refactored later to avoid 2PC
+
         inventoryItem.markEventsAsCommitted();
     }
 }
