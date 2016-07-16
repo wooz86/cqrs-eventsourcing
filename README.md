@@ -1,7 +1,7 @@
 # cqrs-eventsourcing
 My first attempt at implementing a naive event sourcing / CQRS solution using plain Java (no frameworks and only a couple of dependencies used.)
 
-There still a lot of things to be done. This is just my first attempt at implementing this technique.
+There's still a lot of things to be done. This is just my first attempt at implementing this technique.
 The project includes a basic framework for cqrs and event sourcing (located in framework/), an API-package containing the
 commands and events to be used when interacting with aggregates, either by processing published events or by issuing a command to an aggregate.
 
