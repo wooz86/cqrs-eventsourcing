@@ -13,12 +13,18 @@ import com.wooz86.inventory.commandside.application.CreateInventoryItemCommandHa
 import com.wooz86.inventory.commandside.application.IncreaseInventoryItemPriceCommandHandler;
 import com.wooz86.inventory.commandside.application.ReduceInventoryItemPriceCommandHandler;
 import com.wooz86.inventory.commandside.domain.model.InventoryItem;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.io.IOException;
 import java.util.UUID;
 
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, IOException, ClassNotFoundException, ConcurrencyException, AggregateNotFoundException {
+        ApplicationContext ctx = SpringApplication.run(Application.class, args);
+
         UUID aggregateId = UUID.randomUUID();
 
         Repository repository = new RepositoryImpl<>(InventoryItem.class);
