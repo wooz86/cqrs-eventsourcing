@@ -2,9 +2,13 @@ buildscript {
     repositories {
         mavenCentral()
     }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE")
+    }
 }
 
 apply plugin: 'java'
+apply plugin: 'spring-boot'
 apply plugin: 'idea'
 
 jar {
@@ -20,10 +24,13 @@ repositories {
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.12'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.5'
+    compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'com.datastax.cassandra:cassandra-driver-core:3.0.0'
     compile 'com.datastax.cassandra:cassandra-driver-mapping:3.0.0'
 
-    testCompile 'junit:junit:4.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
 }
