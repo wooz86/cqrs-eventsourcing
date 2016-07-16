@@ -13,6 +13,7 @@
 
 #Gradle temporary files
 target/
+build
 
 #Eclipse files
 **/.project
