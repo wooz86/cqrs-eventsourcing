@@ -6,7 +6,6 @@ The project includes a basic framework for cqrs and event sourcing (located in f
 commands and events to be used when interacting with aggregates, either by processing published events or by issuing a command to an aggregate.
 
 #### TODOs and improvements
-* Implement Spring Boot
 * Implement tests
 * Implement read side for the inventory item aggregate.
 * Implement a Command Bus
